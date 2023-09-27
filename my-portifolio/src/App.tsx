@@ -1,4 +1,4 @@
-import Header from "./components/layout/Header";
+import Header from "../dist/assets/Header";
 import Main from "./components/pages/Main";
 
 function App() {
