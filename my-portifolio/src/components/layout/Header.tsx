@@ -1,5 +1,3 @@
-import React from "react";
-
 // images
 
 import profile from "../../assets/images/profileFelipe.jpg";

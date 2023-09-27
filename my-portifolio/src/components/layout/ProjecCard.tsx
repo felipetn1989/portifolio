@@ -6,10 +6,7 @@ import { Iproject } from "../interfaces/IProjects";
 // components
 
 import Button from "./Button";
-
-type Props = {};
-
-const ProjecCard = (props: Props) => {
+const ProjecCard = () => {
   const myProjects: Iproject[] = [
     {
       projectId: "ipTracker",
