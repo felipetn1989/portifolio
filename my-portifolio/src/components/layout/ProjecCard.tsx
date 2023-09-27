@@ -34,8 +34,8 @@ const ProjecCard = () => {
     {
       projectId: "tipCalculator",
       projectTitle: "Calculadora de gorjeta",
-      projectThumb: "../../assets/images/tipCalculator.png",
-      projectURL: tipCalcThumb,
+      projectThumb: tipCalcThumb,
+      projectURL: "https://felipetn1989.github.io/tip-calculator-app-main/",
       codeURL: "https://github.com/felipetn1989/tip-calculator-app-main",
       projectDescription:
         "Nesta calculadora, o usuário pode inserir o valor total da conta, a quantidade de pessoas no grupo e a porcentagem da gorjeta (com opção de valor customizado fora dos valores padrões mostrados no aplicativo. Enquanto o usuário digita os valores, o programa calcula o valor por pessoa e a gorjeta",
@@ -58,7 +58,7 @@ const ProjecCard = () => {
               {element.projectTitle}
             </h2>
             <p>{element.projectDescription}</p>
-            <div className="flex justify-between">
+            <div className="flex justify-between items-center">
               <Button btnText="Ir para o site" url={element.projectURL} />
               <a href={element.codeURL} target="blank">
                 <FaGithub className="bg-[#5c7ea2] w-8 h-8 p-1 rounded-full" />
