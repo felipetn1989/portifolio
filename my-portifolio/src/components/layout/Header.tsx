@@ -26,14 +26,14 @@ const Header = ({ goTo, showMobileMenu, displayMenu }: Props) => {
         <GiHamburgerMenu className="block lg:hidden hover:cursor-pointer" />
       </button>
       {showMobileMenu && (
-        <nav className="absolute bg-white text-black right-12 top-24 p-8 lg:bg-[unset] lg:text-white lg:p-[unset] lg:right-[unset] lg:top-[unset] lg:relative lg:block">
+        <nav className="absolute bg-white text-black w-[80%] right-[50%] translate-x-[50%] top-24 p-8 lg:w-[unset] lg:translate-x-[unset] lg:bg-[unset] lg:text-white lg:p-[unset] lg:right-[unset] lg:top-[unset] lg:relative lg:block">
           <ul className="flex flex-col lg:flex-row gap-8 justify-center font-bold">
-            <li className="hover:cursor-pointer hover:text-[#5c7ea2]">
+            <li className="hover:cursor-pointer hover:text-[#5c7ea2] border-b border-b-gray-400 pb-6 lg:pb-[unset] lg:border-b-0">
               <button className="uppercase" onClick={() => goTo("home")}>
                 Home
               </button>
             </li>
-            <li className="hover:cursor-pointer hover:text-[#5c7ea2]">
+            <li className="hover:cursor-pointer hover:text-[#5c7ea2] border-b border-gray-400 pb-6 lg:pb-[unset] lg:border-b-0">
               <button className="uppercase" onClick={() => goTo("about")}>
                 Sobre
               </button>
