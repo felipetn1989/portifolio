@@ -4,8 +4,8 @@ import { FaGithub } from "react-icons/fa";
 import { Iproject } from "../interfaces/IProjects";
 
 // components
-
 import Button from "./Button";
+
 const ProjecCard = () => {
   const myProjects: Iproject[] = [
     {
