@@ -1,9 +1,20 @@
-// react icons
+// react icons#5c7ea2
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
-type Props = {};
+// interfaces
+import { Iproject } from "../interfaces/IProjects";
 
-const Main = (props: Props) => {
+// estilos CSS
+import style from "./Main.module.css";
+import Button from "../layout/Button";
+
+type Props = {
+  goTo(section: string): void;
+};
+
+const Main = ({ goTo }: Props) => {
+  const accentColor: string = "#5c7ea2";
+
   const skills: string[] = [
     "HTML",
     "CSS",
@@ -15,12 +26,31 @@ const Main = (props: Props) => {
     "Responsive Design",
   ];
 
+  const myProjects: Iproject[] = [
+    {
+      projectId: "ipTracker",
+      projectTitle: "IP Address Tracker",
+      projectThumb: "../../../public/IpTrackerThumbnail.png",
+      projectURL: "https://felipetn1989.github.io/ip-address-tracker-master/",
+      projectDescription:
+        "Tracker de endereço IP. O usuário coloca um IP na barra de busca e o site irá mostrar os dados deste IP e sua localização em um mapa. Projeto com React e Tailwind, utilizando duas API's, uma para o IP e outra para a localização no mapa.",
+    },
+    {
+      projectId: "urlShort",
+      projectTitle: "Encurtador de Links",
+      projectThumb: "../../../public/urlShortenerLink.png",
+      projectURL: "https://felipetn1989.github.io/url-shortening-api-master/",
+      projectDescription:
+        "Projeto de um site com API em que, na barra de texto, o usuário pode colocar um link e a aplicação irá retornar uma versão curta do link. O projeto ainda conta com uma função de copiar para área de transferência e uma lista de links encurtados gerados dinamicamente.",
+    },
+  ];
+
   return (
     <main className="bg-[#0f1c3a] text-[#d8d8d8] px-8 pt-24 pb-4 lg:px-16 space-y-8 max-w-[80rem] m-auto">
-      <div className="space-y-8 py-16">
+      <div id="home" className="space-y-8 py-16">
         <div className="space-y-10">
-          <h1 id="home" className="text-[4rem] font-bold leading-[4.5rem]">
-            <span className="text-[#4DBFC4] text-base font-bold">
+          <h1 className="text-[4rem] font-bold leading-[4.5rem]">
+            <span className={`text-[${accentColor}] text-base font-bold`}>
               Olá, meu nome é
             </span>
             <br /> Felipe Thomé. <br />{" "}
@@ -28,32 +58,43 @@ const Main = (props: Props) => {
             <p className="text-base pt-4">Dev Front End</p>
           </h1>
 
-          <button className="bg-[#49B8AC] text-white py-4 px-6 font-bold uppercase rounded-xl hover:bg-white hover:text-[#49B8AC]">
+          <button
+            className={`bg-[${accentColor}] text-white py-4 px-6 font-bold uppercase rounded-xl hover:bg-white hover:text-[${accentColor}]`}
+            onClick={() => goTo("projects")}
+          >
             Meus Projetos
           </button>
         </div>
         <div className="text-2xl flex gap-4 pt-8">
           <a href="https://github.com/felipetn1989" target="blank">
-            <FaGithub className="hover:cursor-pointer hover:text-[#49B8AC]" />
+            <FaGithub className={`hover:cursor-pointer hover:text-[#5c7ea2]`} />
           </a>
           <a
             href="https://www.linkedin.com/in/felipe-thome-a0094a276/"
             target="blank"
           >
-            <FaLinkedin className="hover:cursor-pointer hover:text-[#49B8AC]" />
+            <FaLinkedin
+              className={`hover:cursor-pointer hover:text-[#5c7ea2]`}
+            />
           </a>
           <a href="https://instagram.com/ftn1989" target="blank">
-            <FaInstagram className="hover:cursor-pointer hover:text-[#49B8AC]" />
+            <FaInstagram
+              className={`hover:cursor-pointer hover:text-[#5c7ea2]`}
+            />
           </a>
         </div>
       </div>
       <div id="about" className="lg:grid lg:grid-cols-2 lg:gap-32">
         <div className="space-y-4">
           <div className="w-fit">
-            <h2 className="text-[#49B8AC] uppercase font-thin text-2xl">
+            <h2
+              className={`text-[${accentColor}] uppercase font-thin text-2xl`}
+            >
               <span className="text-white">01.</span> Sobre
             </h2>
-            <div className="bg-[#49B8AC] w-full h-1 skew-x-[-30deg]"></div>
+            <div
+              className={`bg-[${accentColor}] w-full h-1 skew-x-[-30deg]`}
+            ></div>
           </div>
           <div className="space-y-4 text-justify text-[#808080]">
             <p>
@@ -81,12 +122,14 @@ const Main = (props: Props) => {
           </div>
         </div>
         <div className="space-y-2">
-          <h2 className="font-thin text-2xl uppercase">Habilidades</h2>
+          <h2 className="font-thin text-2xl uppercase mt-4 lg:mt-[unset]">
+            Habilidades
+          </h2>
           <div className="flex gap-6 flex-wrap w-80 text-white">
             {skills.map((element, index) => (
               <span
                 key={index}
-                className="bg-[#49B8AC] w-fit px-4 py-2 rounded-md"
+                className={`bg-[${accentColor}] w-fit px-4 py-2 rounded-md`}
               >
                 {element}
               </span>
@@ -94,11 +137,38 @@ const Main = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className="w-fit">
-        <h2 className="text-[#49B8AC] uppercase font-thin text-2xl">
+      <div id="projects" className="w-full">
+        <h2 className={`text-[${accentColor}] uppercase font-thin text-2xl`}>
           <span className="text-white">02.</span> Projetos
         </h2>
-        <div className="bg-[#4DBFC4] w-full h-1 skew-x-[-30deg]"></div>
+        <div
+          className={`bg-[${accentColor}] w-[10.75rem] h-1 skew-x-[-30deg]`}
+        ></div>
+        <div className="mt-8 space-y-6 flex flex-col w-full lg:flex-row lg:space-y-0 lg:gap-4 lg:justify-center">
+          {myProjects.map((element) => (
+            <div
+              key={element.projectId}
+              className="overflow-hidden lg:w-[30rem]"
+            >
+              <a href={element.projectURL} target="blank">
+                <img
+                  src={element.projectThumb}
+                  alt={element.projectTitle}
+                  className={`h-60 object-cover w-full object-left-top`}
+                />
+              </a>
+              <div className="border px-4 py-8 space-y-4">
+                <h2 className="font-bold border-b border-b-white">
+                  {element.projectTitle}
+                </h2>
+                <p>{element.projectDescription}</p>
+                <div>
+                  <Button btnText="Ir para o site" url={element.projectURL} />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </main>
   );

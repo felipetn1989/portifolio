@@ -4,11 +4,13 @@ import React from "react";
 
 import profile from "../../assets/images/profileFelipe.jpg";
 
-type Props = {};
+type Props = {
+  goTo(section: string): void;
+};
 
-const Header = (props: Props) => {
+const Header = ({ goTo }: Props) => {
   return (
-    <header className="fixed z-10 w-full text-[#000000] px-12 py-6 bg-white space-y-4 lg:flex lg:justify-between">
+    <header className="fixed z-10 w-full text-white px-12 py-6 bg-black space-y-4 lg:flex lg:justify-between">
       <div className="flex justify-center gap-4 items-center">
         <img
           src={profile}
@@ -19,14 +21,14 @@ const Header = (props: Props) => {
       </div>
       <nav>
         <ul className="flex gap-8 justify-center uppercase font-bold">
-          <li className="hover:cursor-pointer hover:text-[#49B8AC]">
-            <a href="#home">Home</a>
+          <li className="hover:cursor-pointer hover:text-[#5c7ea2]">
+            <button onClick={() => goTo("home")}>Home</button>
           </li>
-          <li className="hover:cursor-pointer hover:text-[#49B8AC]">
-            <a href="#about">Sobre</a>
+          <li className="hover:cursor-pointer hover:text-[#5c7ea2]">
+            <button onClick={() => goTo("about")}>Sobre</button>
           </li>
-          <li className="hover:cursor-pointer hover:text-[#49B8AC]">
-            Projetos
+          <li className="hover:cursor-pointer hover:text-[#5c7ea2]">
+            <button onClick={() => goTo("projects")}>Projetos</button>
           </li>
         </ul>
       </nav>
