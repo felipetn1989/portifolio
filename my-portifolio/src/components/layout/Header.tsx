@@ -13,14 +13,19 @@ type Props = {
 const Header = ({ goTo, showMobileMenu, displayMenu }: Props) => {
   return (
     <header className="fixed z-10 w-full text-white px-12 py-6 bg-black space-y-4 flex justify-between items-start">
-      <div className="flex justify-center gap-4 items-center">
-        <img
-          src={profile}
-          className="w-12 h-12 rounded-full border-black border p-0.5"
-          alt="Headshot of Felipe Thomé"
-        />
-        <h1 className="text-center font-bold uppercase">felipe thome.</h1>
-      </div>
+      <a href="https://felipetn1989.github.io/portifolio">
+        <div className="flex justify-center gap-4 items-center">
+          <img
+            src={profile}
+            className="w-12 h-12 rounded-full border-black border p-0.5"
+            alt="Headshot of Felipe Thomé"
+          />
+          <h1 className="text-center font-bold uppercase hover:cursor-pointer">
+            felipe thome.
+          </h1>
+        </div>
+      </a>
+
       <button onClick={displayMenu}>
         <GiHamburgerMenu className="block lg:hidden hover:cursor-pointer" />
       </button>

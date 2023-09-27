@@ -16,6 +16,10 @@ function App() {
     setShowMobileMenu(false);
   }
 
+  function handleMenu() {
+    setShowMobileMenu(window.innerWidth > 1024)
+  }
+
   function goTo(section: string) {
     const destination = document.getElementById(section);
 
@@ -29,6 +33,7 @@ function App() {
   }
 
   window.addEventListener("resize", () => setShowMobileMenu(window.innerWidth > 1024))
+  window.addEventListener("load", handleMenu)
 
   return (
     <>
