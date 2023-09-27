@@ -6,12 +6,17 @@ import { Iproject } from "../interfaces/IProjects";
 // components
 import Button from "./Button";
 
+// images
+import thumbIpTracker from "../../assets/images/IpTrackerThumbnail.png";
+import urlThumb from "../../assets/images/urlShortenerLink.png";
+import tipCalcThumb from "../../assets/images/tipCalculator.png";
+
 const ProjecCard = () => {
   const myProjects: Iproject[] = [
     {
       projectId: "ipTracker",
       projectTitle: "IP Address Tracker",
-      projectThumb: "../../../public/IpTrackerThumbnail.png",
+      projectThumb: thumbIpTracker,
       projectURL: "https://felipetn1989.github.io/ip-address-tracker-master/",
       codeURL: "https://github.com/felipetn1989/ip-address-tracker-master",
       projectDescription:
@@ -20,7 +25,7 @@ const ProjecCard = () => {
     {
       projectId: "urlShort",
       projectTitle: "Encurtador de Links",
-      projectThumb: "../../../public/urlShortenerLink.png",
+      projectThumb: urlThumb,
       projectURL: "https://felipetn1989.github.io/url-shortening-api-master/",
       codeURL: "https://github.com/felipetn1989/ip-address-tracker-master",
       projectDescription:
@@ -29,8 +34,8 @@ const ProjecCard = () => {
     {
       projectId: "tipCalculator",
       projectTitle: "Calculadora de gorjeta",
-      projectThumb: "../../../public/tipCalculator.png",
-      projectURL: "https://felipetn1989.github.io/tip-calculator-app-main/",
+      projectThumb: "../../assets/images/tipCalculator.png",
+      projectURL: tipCalcThumb,
       codeURL: "https://github.com/felipetn1989/tip-calculator-app-main",
       projectDescription:
         "Nesta calculadora, o usuário pode inserir o valor total da conta, a quantidade de pessoas no grupo e a porcentagem da gorjeta (com opção de valor customizado fora dos valores padrões mostrados no aplicativo. Enquanto o usuário digita os valores, o programa calcula o valor por pessoa e a gorjeta",
