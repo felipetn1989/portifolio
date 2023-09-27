@@ -17,16 +17,16 @@ const Header = ({ goTo }: Props) => {
         />
         <h1 className="text-center font-bold uppercase">felipe thome.</h1>
       </div>
-      <nav>
-        <ul className="flex gap-8 justify-center uppercase font-bold">
+      <nav className="hidden lg:block">
+        <ul className="flex gap-8 justify-center font-bold">
           <li className="hover:cursor-pointer hover:text-[#5c7ea2]">
-            <button onClick={() => goTo("home")}>Home</button>
+            <button className="uppercase" onClick={() => goTo("home")}>Home</button>
           </li>
           <li className="hover:cursor-pointer hover:text-[#5c7ea2]">
-            <button onClick={() => goTo("about")}>Sobre</button>
+            <button className="uppercase" onClick={() => goTo("about")}>Sobre</button>
           </li>
           <li className="hover:cursor-pointer hover:text-[#5c7ea2]">
-            <button onClick={() => goTo("projects")}>Projetos</button>
+            <button className="uppercase" onClick={() => goTo("projects")}>Projetos</button>
           </li>
         </ul>
       </nav>
