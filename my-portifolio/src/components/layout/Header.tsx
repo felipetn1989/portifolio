@@ -1,5 +1,4 @@
 // images
-import { useState } from "react";
 import profile from "../../assets/images/profileFelipe.jpg";
 
 // react-icons
