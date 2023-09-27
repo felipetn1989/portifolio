@@ -1,7 +1,8 @@
 // interfaces
-
-import { FaGithub } from "react-icons/fa";
 import { Iproject } from "../interfaces/IProjects";
+
+// react-icons
+import { FaGithub } from "react-icons/fa";
 
 // components
 import Button from "./Button";

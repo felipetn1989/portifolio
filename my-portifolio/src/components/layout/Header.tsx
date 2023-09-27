@@ -1,14 +1,19 @@
 // images
-
+import { useState } from "react";
 import profile from "../../assets/images/profileFelipe.jpg";
+
+// react-icons
+import { GiHamburgerMenu } from "react-icons/gi";
 
 type Props = {
   goTo(section: string): void;
+  showMobileMenu: boolean;
+  displayMenu(): void;
 };
 
-const Header = ({ goTo }: Props) => {
+const Header = ({ goTo, showMobileMenu, displayMenu }: Props) => {
   return (
-    <header className="fixed z-10 w-full text-white px-12 py-6 bg-black space-y-4 lg:flex lg:justify-between">
+    <header className="fixed z-10 w-full text-white px-12 py-6 bg-black space-y-4 flex justify-between items-start">
       <div className="flex justify-center gap-4 items-center">
         <img
           src={profile}
@@ -17,19 +22,30 @@ const Header = ({ goTo }: Props) => {
         />
         <h1 className="text-center font-bold uppercase">felipe thome.</h1>
       </div>
-      <nav className="hidden lg:block">
-        <ul className="flex gap-8 justify-center font-bold">
-          <li className="hover:cursor-pointer hover:text-[#5c7ea2]">
-            <button className="uppercase" onClick={() => goTo("home")}>Home</button>
-          </li>
-          <li className="hover:cursor-pointer hover:text-[#5c7ea2]">
-            <button className="uppercase" onClick={() => goTo("about")}>Sobre</button>
-          </li>
-          <li className="hover:cursor-pointer hover:text-[#5c7ea2]">
-            <button className="uppercase" onClick={() => goTo("projects")}>Projetos</button>
-          </li>
-        </ul>
-      </nav>
+      <button onClick={displayMenu}>
+        <GiHamburgerMenu className="block lg:hidden hover:cursor-pointer" />
+      </button>
+      {showMobileMenu && (
+        <nav className="absolute bg-white text-black right-12 top-24 p-8 lg:bg-[unset] lg:text-white lg:p-[unset] lg:right-[unset] lg:top-[unset] lg:relative lg:block">
+          <ul className="flex flex-col lg:flex-row gap-8 justify-center font-bold">
+            <li className="hover:cursor-pointer hover:text-[#5c7ea2]">
+              <button className="uppercase" onClick={() => goTo("home")}>
+                Home
+              </button>
+            </li>
+            <li className="hover:cursor-pointer hover:text-[#5c7ea2]">
+              <button className="uppercase" onClick={() => goTo("about")}>
+                Sobre
+              </button>
+            </li>
+            <li className="hover:cursor-pointer hover:text-[#5c7ea2]">
+              <button className="uppercase" onClick={() => goTo("projects")}>
+                Projetos
+              </button>
+            </li>
+          </ul>
+        </nav>
+      )}
     </header>
   );
 };

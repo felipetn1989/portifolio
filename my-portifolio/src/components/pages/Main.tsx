@@ -4,9 +4,10 @@ import ProjecCard from "../layout/ProjecCard";
 
 type Props = {
   goTo(section: string): void;
+  hideMenu(): void;
 };
 
-const Main = ({ goTo }: Props) => {
+const Main = ({ goTo, hideMenu }: Props) => {
   const accentColor: string = "#5c7ea2";
 
   const skills: string[] = [
@@ -21,7 +22,10 @@ const Main = ({ goTo }: Props) => {
   ];
 
   return (
-    <main className="bg-[#0f1c3a] text-[#d8d8d8] px-8 pt-24 pb-4 lg:px-16 space-y-8 max-w-[80rem] m-auto">
+    <main
+      className="bg-[#0f1c3a] text-[#d8d8d8] px-8 pt-24 pb-4 lg:px-16 space-y-8 max-w-[80rem] m-auto"
+      onClick={hideMenu}
+    >
       <div id="home" className="space-y-8 py-16">
         <div className="space-y-10">
           <h1 className="text-[4rem] font-bold leading-[4.5rem]">

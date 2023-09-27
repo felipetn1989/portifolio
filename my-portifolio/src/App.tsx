@@ -1,7 +1,21 @@
+// react
+import { useState } from "react";
+
+// components
 import Header from "./components/layout/Header";
 import Main from "./components/pages/Main";
 
 function App() {
+  const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
+
+  function displayMenu() {
+    setShowMobileMenu(!showMobileMenu);
+  }
+
+  function hideMenu() {
+    setShowMobileMenu(false);
+  }
+
   function goTo(section: string) {
     const destination = document.getElementById(section);
 
@@ -14,10 +28,16 @@ function App() {
     }
   }
 
+  window.addEventListener("resize", () => setShowMobileMenu(window.innerWidth > 1024))
+
   return (
     <>
-      <Header goTo={goTo} />
-      <Main goTo={goTo} />
+      <Header
+        goTo={goTo}
+        showMobileMenu={showMobileMenu}
+        displayMenu={displayMenu}
+      />
+      <Main goTo={goTo} hideMenu={hideMenu} />
     </>
   );
 }
