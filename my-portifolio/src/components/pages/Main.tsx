@@ -28,7 +28,7 @@ const Main = ({ goTo, hideMenu }: Props) => {
     >
       <div id="home" className="space-y-8 py-16">
         <div className="space-y-10">
-          <h1 className="text-[4rem] font-bold leading-[4.5rem]">
+          <h1 className="text-[3rem] lg:text-[4rem] font-bold leading-[4.5rem]">
             <span className={`text-[${accentColor}] text-base font-bold`}>
               Olá, meu nome é
             </span>
