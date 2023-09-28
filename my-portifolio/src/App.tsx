@@ -24,7 +24,7 @@ function App() {
     const destination = document.getElementById(section);
 
     if (destination) {
-      const offset = window.innerWidth < 1024 ? 136 : 96;
+      const offset = window.innerWidth < 1024 ? 144 : 104;
       window.scrollTo({
         top: destination.offsetTop - offset,
         behavior: "smooth",
