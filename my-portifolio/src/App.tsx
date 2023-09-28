@@ -6,18 +6,18 @@ import Header from "./components/layout/Header";
 import Main from "./components/pages/Main";
 
 function App() {
-  const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
+  const [showMobileMenu, setShowMobileMenu] = useState<boolean>(
+    window.innerWidth > 1024
+  );
 
   function displayMenu() {
     setShowMobileMenu(!showMobileMenu);
   }
 
   function hideMenu() {
-    setShowMobileMenu(false);
-  }
-
-  function handleMenu() {
-    setShowMobileMenu(window.innerWidth > 1024)
+    if (window.innerWidth < 1024) {
+      setShowMobileMenu(false);
+    }
   }
 
   function goTo(section: string) {
@@ -32,8 +32,9 @@ function App() {
     }
   }
 
-  window.addEventListener("resize", () => setShowMobileMenu(window.innerWidth > 1024))
-  window.addEventListener("load", handleMenu)
+  window.addEventListener("resize", () =>
+    setShowMobileMenu(window.innerWidth > 1024)
+  );
 
   return (
     <>

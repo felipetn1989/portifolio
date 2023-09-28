@@ -12,6 +12,9 @@ import thumbIpTracker from "../../assets/images/IpTrackerThumbnail.png";
 import urlThumb from "../../assets/images/urlShortenerLink.png";
 import tipCalcThumb from "../../assets/images/tipCalculator.png";
 
+// css styles
+import style from "./ProjectCard.module.css";
+
 const ProjecCard = () => {
   const myProjects: Iproject[] = [
     {
@@ -44,31 +47,37 @@ const ProjecCard = () => {
   ];
 
   return (
-    <>
+    <div className="relative flex flex-col justify-center gap-6 lg:flex-row lg:flex-wrap">
+      {/* */}
       {myProjects.map((element) => (
-        <div key={element.projectId} className="overflow-hidden lg:w-[30rem]">
-          <a href={element.projectURL} target="blank">
-            <img
-              src={element.projectThumb}
-              alt={element.projectTitle}
-              className={`h-60 object-cover w-full object-left-top`}
-            />
-          </a>
-          <div className="border px-4 py-8 space-y-4">
-            <h2 className="font-bold border-b border-b-white">
-              {element.projectTitle}
-            </h2>
-            <p>{element.projectDescription}</p>
-            <div className="flex justify-between items-center">
-              <Button btnText="Ir para o site" url={element.projectURL} />
-              <a href={element.codeURL} target="blank">
-                <FaGithub className="bg-[#5c7ea2] w-8 h-8 p-1 rounded-full" />
-              </a>
+        <div
+          key={element.projectId}
+          className={`lg:w-[25rem] ${style.cardBox}`}
+        >
+          <div className={style.infoDiv}>
+            <a href={element.projectURL} target="blank">
+              <img
+                src={element.projectThumb}
+                alt={element.projectTitle}
+                className={`h-60 object-cover w-full object-left-top`}
+              />
+            </a>
+            <div className="px-4 py-8 space-y-4 bg-[#293c50]">
+              <h2 className="font-bold border-b border-b-white">
+                {element.projectTitle}
+              </h2>
+              <p>{element.projectDescription}</p>
+              <div className="flex justify-between items-center">
+                <Button btnText="Ir para o site" url={element.projectURL} />
+                <a href={element.codeURL} target="blank">
+                  <FaGithub className="bg-[#5c7ea2] w-8 h-8 p-1 rounded-full" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

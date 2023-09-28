@@ -12,7 +12,7 @@ type Props = {
 
 const Header = ({ goTo, showMobileMenu, displayMenu }: Props) => {
   return (
-    <header className="fixed z-10 w-full text-white px-12 py-6 bg-black space-y-4 flex justify-between items-start">
+    <header className="fixed z-50 w-full text-white px-12 py-6 bg-[#0c1116] space-y-4 flex justify-between items-start">
       <a href="https://felipetn1989.github.io/portifolio">
         <div className="flex justify-center gap-4 items-center">
           <img

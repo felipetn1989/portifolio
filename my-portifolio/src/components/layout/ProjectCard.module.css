@@ -1,0 +1,36 @@
+.cardBox {
+  position: relative;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.infoDiv {
+  inset: 0.1875rem;
+  border-radius: 0.5rem;
+  position: relative;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardBox::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, transparent, #759dc9, #759dc9);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  z-index: 10;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
