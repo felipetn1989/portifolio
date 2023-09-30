@@ -4,5 +4,6 @@ export interface Iproject {
   projectThumb: string;
   projectURL: string;
   codeURL: string;
-  projectDescription: string;
+  projectDescriptionPT: string;
+  projectDescriptionEN: string;
 }

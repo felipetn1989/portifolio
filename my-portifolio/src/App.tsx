@@ -10,6 +10,8 @@ function App() {
     window.innerWidth > 1024
   );
 
+  const [language, setLanguage] = useState<string>("PT");
+
   function displayMenu() {
     setShowMobileMenu(!showMobileMenu);
   }
@@ -42,8 +44,9 @@ function App() {
         goTo={goTo}
         showMobileMenu={showMobileMenu}
         displayMenu={displayMenu}
+        language={language}
       />
-      <Main goTo={goTo} hideMenu={hideMenu} />
+      <Main goTo={goTo} hideMenu={hideMenu} language={language} setLanguage={setLanguage} />
     </>
   );
 }

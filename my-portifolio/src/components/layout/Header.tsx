@@ -8,9 +8,15 @@ type Props = {
   goTo(section: string): void;
   showMobileMenu: boolean;
   displayMenu(): void;
+  language: string;
 };
 
-const Header = ({ goTo, showMobileMenu, displayMenu }: Props) => {
+const Header = ({
+  goTo,
+  showMobileMenu,
+  displayMenu,
+  language,
+}: Props) => {
   return (
     <header className="fixed z-50 w-full text-white px-12 py-6 bg-[#0f1c3a]">
       <div className="space-y-4 flex justify-between items-start max-w-[80rem] m-auto">
@@ -39,12 +45,12 @@ const Header = ({ goTo, showMobileMenu, displayMenu }: Props) => {
               </li>
               <li className="hover:cursor-pointer hover:text-[#5c7ea2] border-b border-gray-400 pb-6 lg:pb-[unset] lg:border-b-0">
                 <button className="uppercase" onClick={() => goTo("about")}>
-                  Sobre
+                  {language === "PT" ? "Sobre" : "About"}
                 </button>
               </li>
               <li className="hover:cursor-pointer hover:text-[#5c7ea2]">
                 <button className="uppercase" onClick={() => goTo("projects")}>
-                  Projetos
+                {language === "PT" ? "Projetos" : "Projects"}
                 </button>
               </li>
             </ul>
