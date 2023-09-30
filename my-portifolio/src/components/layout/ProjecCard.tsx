@@ -22,17 +22,6 @@ type Props = {
 const ProjecCard = ({ language }: Props) => {
   const myProjects: Iproject[] = [
     {
-      projectId: "ipTracker",
-      projectTitle: "IP Address Tracker",
-      projectThumb: thumbIpTracker,
-      projectURL: "https://felipetn1989.github.io/ip-address-tracker-master/",
-      codeURL: "https://github.com/felipetn1989/ip-address-tracker-master",
-      projectDescriptionPT:
-        "Tracker de endereço IP. O usuário coloca um IP (formato IPv4) na barra de busca e o site irá mostrar os dados deste IP, como dono e fuso horário, e sua localização em um mapa. Projeto com React e Tailwind, utilizando duas API's, uma para o IP e outra para a localização no mapa.",
-      projectDescriptionEN:
-        "IP Address Tracker. The user enters an IPv4 formatted IP address in the search bar, and the website will display the data associated with this IP, such as the owner and time zone, along with its location on a map. The project is built with React and Tailwind CSS, utilizing two APIs, one for the IP information and another for mapping the location.",
-    },
-    {
       projectId: "urlShort",
       projectTitle: "URL Link Shortening",
       projectThumb: urlThumb,
@@ -54,21 +43,32 @@ const ProjecCard = ({ language }: Props) => {
       projectDescriptionEN:
         "In this calculator, the user can enter the total charge, the number of people in the group, and the tip percentage (with an option for custom values outside of the default values shown in the app). As the user enters the values, the program calculates the amount per person and the tip.",
     },
+    {
+      projectId: "ipTracker",
+      projectTitle: "IP Address Tracker",
+      projectThumb: thumbIpTracker,
+      projectURL: "https://felipetn1989.github.io/ip-address-tracker-master/",
+      codeURL: "https://github.com/felipetn1989/ip-address-tracker-master",
+      projectDescriptionPT:
+        "Tracker de endereço IP. O usuário coloca um IP (formato IPv4) na barra de busca e o site irá mostrar os dados deste IP, como dono e fuso horário, e sua localização em um mapa. Projeto com React e Tailwind, utilizando duas API's, uma para o IP e outra para a localização no mapa.",
+      projectDescriptionEN:
+        "IP Address Tracker. The user enters an IPv4 formatted IP address in the search bar, and the website will display the data associated with this IP, such as the owner and time zone, along with its location on a map. The project is built with React and Tailwind CSS, utilizing two APIs, one for the IP information and another for mapping the location.",
+    },
   ];
 
   return (
-    <div className="relative flex flex-col justify-center items-center gap-6 lg:flex-row lg:flex-wrap">
+    <div className="relative flex flex-col justify-center items-center gap-6">
       {myProjects.map((element) => (
         <div
           key={element.projectId}
-          className={`lg:w-[25rem] lg: h-fit ${style.cardBox}`}
+          className={`lg:w-[40rem] ${style.cardBox}`}
         >
-          <div className={style.infoDiv}>
+          <div className={`${style.infoDiv}`}>
             <a href={element.projectURL} target="blank">
               <img
                 src={element.projectThumb}
                 alt={element.projectTitle}
-                className={`h-60 object-cover w-full object-left-top`}
+                className={`object-cover w-full object-left-top`}
               />
             </a>
             <div className="px-4 py-8 space-y-4 bg-[#293c50]">
